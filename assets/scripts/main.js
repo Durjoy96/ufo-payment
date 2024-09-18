@@ -7,7 +7,7 @@ const ufoImg = document.getElementById("ufo-img");
 
     if(phone === "019" && pin === "1234") {  
       // window.location.assign("home.html");
-      window.location.href = "home.html";
+      window.location.href = "account.html";
     } else {
       alert("please input a valid phone number or pin");
     };

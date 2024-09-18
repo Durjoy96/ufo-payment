@@ -14,8 +14,8 @@
         <div class="mockup-phone">
             <div class="camera"></div>
             <div class="display">
-                <div class="artboard artboard-demo phone-1 items-start justify-normal px-3">
-                    <div class="w-full flex items-center justify-between mt-8">
+                <div class="artboard artboard-demo phone-1 items-start justify-normal px-4 bg-white">
+                    <div class="w-full flex items-center justify-between mt-8 pb-5 border-b border-gray-300">
                         <div>
                             <div class="flex items-center justify-between gap-3">
                                 <div class="max-w-10">
@@ -30,11 +30,43 @@
                         <button class="px-4 py-2 border border-stone-300 rounded-lg text-sm">Log Out</button>
                     </div>
                     
+                    <div class="w-full flex gap-3 mt-5">
+                        <!-- cash in -->
+                        <div class="w-full bg-primary rounded-lg p-5 space-y-4 text-center cursor-pointer hover:bg-primary/90">
+                            <img class="max-w-12 mx-auto" src="assets/icons/cashin.png" alt="cash in">
+                            <span class="text-white font-bold text-xl">Cash In</span>
+                        </div>
+                        <!-- cash out -->
+                        <div class="w-full bg-white rounded-lg border p-5 space-y-4 text-center cursor-pointer">
+                            <img class="max-w-12 mx-auto" src="assets/icons/cashout.png" alt="cash out">
+                            <span class="text-stone-700 font-bold text-xl">Cash Out</span>
+                        </div>
+                    </div>
+
+                    <form class="card-body w-full">
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text font-bold">Amount</span>
+                            </label>
+                            <input id="amount" type="tel" placeholder="Enter Amount" class="input input-bordered"
+                                required />
+                        </div>
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text font-bold">4 Digit Pin</span>
+                            </label>
+                            <input id="pinNumber" type="password" placeholder="Enter 4 Digit Pin"
+                                class="input input-bordered" required />
+                        </div>
+                        <div class="form-control mt-6">
+                            <button class="btn btn-primary" id="loginBtn">Add Money</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </main>
-    <script src="assets/scripts/main.js"></script>
+    <script src="assets/scripts/account.js"></script>
 </body>
 
 </html>

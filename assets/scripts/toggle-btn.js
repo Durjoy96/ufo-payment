@@ -1,45 +1,57 @@
-const cashInBtn = document.getElementById("cashIn");
-const cashOutBtn = document.getElementById("cashOut");
-const increaseBtn = document.getElementById("addMoneyBtn");
-const decreaseBtn = document.getElementById("decreaseBtn");
+const cashInBtn = getElement("cashIn");
+const cashOutBtn = getElement("cashOut");
+const increaseBtn = getElement("addMoneyBtn");
+const decreaseBtn = getElement("decreaseBtn");
+const transactionBtn = getElement("transaction");
+const form = getElement("form");
+const transactionContainer = getElement("transactionContainer");
 
 cashOutBtn.addEventListener("click", function () {
-    //cashIn styles
-    cashInBtn.classList.remove("bg-primary");
-    cashInBtn.classList.add("border");
-    cashInBtn.children[1].classList.remove("text-white");
-    cashInBtn.children[1].classList.add("text-stone-700");
-
+    addStyles(cashOutBtn, "bg-red-500");
+    removeStyles(cashInBtn, "bg-primary");
+    removeStyles(transactionBtn, "bg-purple-500");
     //cashIn Btn
     increaseBtn.classList.add("hidden");
-
-    //cashOut styles
-    cashOutBtn.classList.remove("bg-white");
-    cashOutBtn.classList.add("bg-red-500");
-    cashOutBtn.classList.remove("border");
-    cashOutBtn.children[1].classList.add("text-white");
-    cashOutBtn.children[1].classList.remove("text-stone-700");
-
     //CashOut Btn
     decreaseBtn.classList.remove("hidden");
+    //show form
+    form.classList.remove("hidden");
 });
 
 cashInBtn.addEventListener("click", function () {
-    //cashOut styles
-    cashOutBtn.classList.remove("bg-red-500");
-    cashOutBtn.classList.add("border");
-    cashOutBtn.children[1].classList.remove("text-white");
-    cashOutBtn.children[1].classList.add("text-stone-700");
-
-    //CashOut Btn
-    decreaseBtn.classList.add("hidden");
-
-    //cashIn styles
-    cashInBtn.classList.add("bg-primary");
-    cashInBtn.classList.remove("border");
-    cashInBtn.children[1].classList.add("text-white");
-    cashInBtn.children[1].classList.remove("text-stone-700");
-
+    addStyles(cashInBtn, "bg-primary");
+    removeStyles(cashOutBtn, "bg-red-500");
+    removeStyles(transactionBtn, "bg-purple-500");
     //cashIn Btn
     increaseBtn.classList.remove("hidden");
+    //CashOut Btn
+    decreaseBtn.classList.add("hidden");
+    //show form
+    form.classList.remove("hidden");
 });
+
+transactionBtn.addEventListener("click", function () {
+    addStyles(transactionBtn, "bg-purple-500");
+    removeStyles(cashInBtn, "bg-primary");
+    removeStyles(cashOutBtn, "bg-red-500");
+
+    //hide form
+    form.classList.add("hidden");
+
+    //show transactions
+    transactionContainer.classList.remove("hidden");
+});
+
+function addStyles(btnName, BgColor) {
+    btnName.classList.add(BgColor);
+    btnName.classList.remove("border");
+    btnName.children[1].classList.add("text-white");
+    btnName.children[1].classList.remove("text-stone-700");
+}
+
+function removeStyles(btnName, BgColor) {
+    btnName.classList.remove(BgColor);
+    btnName.classList.add("border");
+    btnName.children[1].classList.remove("text-white");
+    btnName.children[1].classList.add("text-stone-700");
+}

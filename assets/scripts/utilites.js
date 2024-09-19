@@ -5,3 +5,7 @@ function getInputValueById(id) {
 function getInnerTextById(id) {
     return document.getElementById(id);
 };
+
+function getElement(id) {
+    return document.getElementById(id);
+};

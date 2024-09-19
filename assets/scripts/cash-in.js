@@ -5,6 +5,8 @@ document.getElementById("addMoneyBtn").addEventListener("click", function(event)
     const pinNumber = getInnerTextById("pinNumber");
     const totalAmount = getInnerTextById("total");
 
+    setCashInHistory(inputAmount.value);
+
     if(pinNumber.value === "1234") {
         let total = parseInt(inputAmount.value) + parseInt(totalAmount.innerText);
         totalAmount.innerText = total;
@@ -13,4 +15,5 @@ document.getElementById("addMoneyBtn").addEventListener("click", function(event)
     } else {
         alert("incorrect pin! Try Again!");
     };
+
 });

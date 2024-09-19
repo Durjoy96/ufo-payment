@@ -4,6 +4,7 @@ document.getElementById("decreaseBtn").addEventListener("click", function(event)
     const inputAmount = getInputValueById("amount");
     const pinNumber = getInputValueById("pinNumber");
     const totalAmount = getInnerTextById("total");
+    setCashOutHistory(inputAmount.value);
 
     if(pinNumber.value === "1234") {
         let total = parseInt(totalAmount.innerText) - parseInt(inputAmount.value);
